@@ -232,7 +232,136 @@ terraform apply
 - **Lambda**: API backend (opcional)
 - **IAM**: Roles e políticas
 
-## 📊 Métricas
+## 💰 Estimativa de Custos AWS
+
+### 📊 **Custos Mensais Estimados**
+
+| Serviço | Uso Estimado | Custo/Mês (USD) | Descrição |
+|---------|--------------|------------------|------------|
+| **S3 Standard** | 1GB armazenamento | $0.023 | Arquivos estáticos (HTML, CSS, JS) |
+| **S3 Requests** | 10K GET requests | $0.004 | Requisições de download |
+| **CloudFront** | 1GB transferência | $0.085 | CDN global para performance |
+| **Lambda** | 100K execuções | $0.020 | API backend (opcional) |
+| **Route 53** | 1 hosted zone | $0.500 | DNS personalizado (opcional) |
+| **Total Base** | - | **$0.632** | **Configuração mínima** |
+| **Total Completo** | - | **$1.132** | **Com DNS personalizado** |
+
+### 🎯 **Cenários de Uso**
+
+#### **🟢 Desenvolvimento/Demo (Atual)**
+```
+💵 Custo: $0.63/mês (~R$ 3.50)
+📊 Tráfego: 1K visitantes/mês
+🌐 Recursos: S3 + CloudFront
+⚡ Performance: Global
+```
+
+#### **🟡 Produção Pequena**
+```
+💵 Custo: $5-15/mês (~R$ 30-85)
+📊 Tráfego: 10K visitantes/mês
+🌐 Recursos: + Lambda + API Gateway
+⚡ Performance: Alta disponibilidade
+```
+
+#### **🟠 Produção Média**
+```
+💵 Custo: $50-150/mês (~R$ 280-850)
+📊 Tráfego: 100K visitantes/mês
+🌐 Recursos: + RDS + ElastiCache
+⚡ Performance: Enterprise
+```
+
+### 🔍 **Detalhamento de Custos**
+
+#### **S3 (Armazenamento)**
+- **Arquivos**: ~25KB (HTML + CSS + JS)
+- **Custo**: $0.023/GB/mês
+- **Estimativa**: Praticamente gratuito
+
+#### **CloudFront (CDN)**
+- **Transferência**: 1GB/mês
+- **Localizações**: Global (12+ regiões)
+- **Cache**: 24h TTL
+- **Benefício**: 50-90% redução latência
+
+#### **Lambda (Opcional)**
+- **Execuções**: 100K/mês
+- **Memória**: 128MB
+- **Duração**: 100ms média
+- **Free Tier**: 1M execuções grátis
+
+### 💡 **Otimizações de Custo**
+
+#### **✅ Implementadas**
+- **S3 Standard-IA**: Para arquivos acessados < 1x/mês
+- **CloudFront Caching**: TTL otimizado
+- **Compressão Gzip**: Reduz transferência
+- **Minificação**: CSS/JS compactados
+
+#### **🔄 Recomendadas**
+- **S3 Intelligent Tiering**: Economia automática
+- **CloudWatch Alarms**: Monitoramento de custos
+- **Reserved Instances**: Para Lambda em produção
+- **Spot Instances**: Para processamento batch
+
+### 📈 **Projeção de Crescimento**
+
+| Visitantes/Mês | Custo Estimado | Recursos Necessários |
+|----------------|----------------|----------------------|
+| 1K | $0.63 | S3 + CloudFront |
+| 10K | $5.20 | + Lambda + API Gateway |
+| 100K | $45.00 | + RDS + ElastiCache |
+| 1M | $350.00 | + Auto Scaling + Multi-AZ |
+
+### 🎯 **ROI e Benefícios**
+
+#### **💰 Economia vs Tradicional**
+```
+Servidor Dedicado: $50-200/mês
+AWS Serverless: $0.63-45/mês
+Economia: 85-99%
+```
+
+#### **⚡ Benefícios Técnicos**
+- **99.99% Disponibilidade** (SLA AWS)
+- **Escala automática** (0 a milhões)
+- **Backup automático** (S3 durabilidade)
+- **CDN global** (baixa latência)
+- **Segurança enterprise** (IAM + VPC)
+
+### 🔗 **Calculadora AWS**
+
+**Para estimativas personalizadas:**
+```
+🌐 AWS Pricing Calculator
+📊 https://calculator.aws
+
+📋 Configuração atual:
+• Região: us-east-1
+• S3: 1GB Standard
+• CloudFront: 1GB/mês
+• Lambda: 100K execuções
+```
+
+### 📊 **Monitoramento de Custos**
+
+#### **🔍 Ferramentas Incluídas**
+- **AWS Cost Explorer**: Análise detalhada
+- **Budget Alerts**: Notificações automáticas
+- **CloudWatch**: Métricas em tempo real
+- **Terraform**: Controle de recursos
+
+#### **⚠️ Alertas Configurados**
+```
+🚨 Custo > $10/mês: Email alert
+📊 Uso > 80% free tier: Warning
+💰 Projeção > $50/mês: Review
+```
+
+---
+
+## 📊 Métricas Técnicas
 
 - **Tamanho**: ~25KB total
 - **Carregamento**: <1s em conexões normais
@@ -240,6 +369,7 @@ terraform apply
 - **Performance**: 90+ no Lighthouse
 - **Testes**: 6+ cenários automatizados
 - **Deploy**: Automatizado com Terraform
+- **Custo**: $0.63/mês (produção básica)
 
 ## 🤝 Contribuição
 
