@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Amazon Ember', 'Helvetica Neue', Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #232F3E 0%, #131A22 50%, #0F1419 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(255, 153, 0, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(35, 47, 62, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(19, 26, 34, 0.4) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.container {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 
+        0 4px 20px rgba(19, 26, 34, 0.2),
+        0 0 0 1px rgba(255, 153, 0, 0.15),
+        0 8px 32px rgba(35, 47, 62, 0.1);
+    width: 90%;
+    max-width: 700px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #FF9900 0%, #E47911 50%, #B12704 100%);
+    color: white;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid #232F3E;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="aws-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23aws-pattern)"/></svg>');
+    opacity: 0.3;
+}
+
+.aws-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.aws-icon {
+    font-size: 32px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+header p {
+    margin-top: 8px;
+    font-size: 14px;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: linear-gradient(180deg, #FAFAFA 0%, #F3F3F3 100%);
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #DDD;
+    box-shadow: 
+        inset 0 1px 3px rgba(35, 47, 62, 0.08),
+        0 1px 2px rgba(19, 26, 34, 0.05);
+}
+
+.message {
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    max-width: 85%;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background: linear-gradient(135deg, #232F3E 0%, #131A22 50%, #0F1419 100%);
+    color: white;
+    margin-left: auto;
+    text-align: right;
+    border-bottom-right-radius: 4px;
+    box-shadow: 
+        0 2px 8px rgba(35, 47, 62, 0.25),
+        0 1px 3px rgba(19, 26, 34, 0.3);
+    border: 1px solid rgba(255, 153, 0, 0.2);
+}
+
+.user-message::before {
+    content: '💬';
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    background: linear-gradient(135deg, #FF9900 0%, #E47911 100%);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    box-shadow: 
+        0 2px 4px rgba(228, 121, 17, 0.4),
+        0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.bot-message {
+    background: linear-gradient(135deg, #F7F9FA 0%, #EAEDED 50%, #D5DBDB 100%);
+    color: #232F3E;
+    border-left: 4px solid #FF9900;
+    border-bottom-left-radius: 4px;
+    box-shadow: 
+        0 2px 8px rgba(35, 47, 62, 0.12),
+        0 1px 3px rgba(19, 26, 34, 0.08);
+    position: relative;
+    border: 1px solid rgba(213, 219, 219, 0.6);
+}
+
+.bot-message::before {
+    content: '🤖';
+    position: absolute;
+    left: -12px;
+    top: -8px;
+    background: linear-gradient(135deg, #FF9900 0%, #E47911 50%, #B12704 100%);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    box-shadow: 
+        0 2px 6px rgba(228, 121, 17, 0.4),
+        0 0 0 2px rgba(255, 255, 255, 0.9),
+        0 4px 12px rgba(177, 39, 4, 0.2);
+}
+
+.bot-message strong {
+    color: #E47911;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(228, 121, 17, 0.1);
+}
+
+.input-container {
+    display: flex;
+    gap: 12px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%);
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #DDD;
+    box-shadow: 
+        0 2px 8px rgba(35, 47, 62, 0.08),
+        0 -1px 0 rgba(255, 153, 0, 0.1);
+}
+
+#messageInput {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid #DDD;
+    border-radius: 24px;
+    outline: none;
+    font-size: 16px;
+    font-family: inherit;
+    background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+    transition: all 0.3s ease;
+    color: #232F3E;
+}
+
+#messageInput:focus {
+    border-color: #E47911;
+    background: #FFFFFF;
+    box-shadow: 
+        0 0 0 3px rgba(228, 121, 17, 0.15),
+        0 2px 8px rgba(255, 153, 0, 0.1);
+}
+
+#messageInput::placeholder {
+    color: #85929E;
+    font-style: italic;
+}
+
+#sendButton {
+    background: linear-gradient(135deg, #FF9900 0%, #E47911 50%, #B12704 100%);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 2px 8px rgba(228, 121, 17, 0.4),
+        0 4px 16px rgba(177, 39, 4, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(177, 39, 4, 0.3);
+}
+
+#sendButton::before {
+    content: '➤';
+    margin-right: 8px;
+}
+
+#sendButton:hover {
+    background: linear-gradient(135deg, #E47911 0%, #B12704 50%, #922B05 100%);
+    transform: translateY(-1px);
+    box-shadow: 
+        0 4px 12px rgba(228, 121, 17, 0.5),
+        0 6px 20px rgba(177, 39, 4, 0.3);
+}
+
+#sendButton:active {
+    transform: translateY(0);
+}
+
+.typing {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #85929E;
+    font-style: italic;
+    background: linear-gradient(135deg, #FEF9E7 0%, #FCF3CF 50%, #F8C471 100%);
+    border-left: 4px solid #F39C12;
+    border: 1px solid rgba(243, 156, 18, 0.2);
+}
+
+.typing-dots {
+    display: flex;
+    gap: 4px;
+}
+
+.typing-dots span {
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #FF9900 0%, #E47911 50%, #B12704 100%);
+    border-radius: 50%;
+    animation: typing 1.4s infinite;
+    box-shadow: 
+        0 2px 4px rgba(228, 121, 17, 0.4),
+        0 1px 2px rgba(177, 39, 4, 0.3);
+}
+
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+    0%, 60%, 100% { 
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+    30% { 
+        transform: translateY(-8px);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar personalizada */
+.messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: linear-gradient(135deg, #F8F9FA 0%, #EAEDED 100%);
+    border-radius: 3px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #FF9900 0%, #E47911 50%, #B12704 100%);
+    border-radius: 3px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #E47911 0%, #B12704 50%, #922B05 100%);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        height: 90vh;
+    }
+    
+    header {
+        padding: 16px;
+    }
+    
+    .aws-logo {
+        gap: 8px;
+    }
+    
+    header h1 {
+        font-size: 24px;
+    }
+    
+    .chat-container {
+        padding: 16px;
+    }
+    
+    .message {
+        max-width: 90%;
+    }
+}
