@@ -203,7 +203,12 @@ Este projeto é uma demonstração educativa. Use livremente para aprendizado e 
 
 ## 👨‍💻 Autor
 
-Criado para demonstrações do Amazon Q Developer no TDC São Paulo 2024.
+Criado para demonstrações do Amazon Q Developer no TDC São Paulo 2025.
+
+
+<img width="758" height="856" alt="image" src="https://github.com/user-attachments/assets/1e22f076-fc66-4a7d-be56-0fc705772170" />
+<img width="762" height="866" alt="image" src="https://github.com/user-attachments/assets/cc47512e-eba8-4ac0-ae7a-1f5335771a64" />
+<img width="741" height="851" alt="image" src="https://github.com/user-attachments/assets/b7902076-c6f3-419b-b887-bfde2da64168" />
 
 ---
 
