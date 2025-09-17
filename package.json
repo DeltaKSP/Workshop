@@ -1,0 +1,31 @@
+{
+  "name": "amazon-q-chatbot-demo",
+  "version": "1.0.0",
+  "description": "Demonstração do Amazon Q Developer para TDC São Paulo 2025",
+  "main": "index.html",
+  "scripts": {
+    "test": "node tests/chatbot.test.js",
+    "test:browser": "open tests/test-runner.html",
+    "serve": "python3 -m http.server 8000",
+    "start": "npm run serve"
+  },
+  "keywords": [
+    "amazon-q",
+    "aws",
+    "chatbot",
+    "tdc-2025",
+    "q-developer-quest-tdc-2025"
+  ],
+  "author": "TDC São Paulo 2025",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/amazon-q-chatbot-demo"
+  },
+  "tags": [
+    "q-developer-quest-tdc-2025"
+  ]
+}

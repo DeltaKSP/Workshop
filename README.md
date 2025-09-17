@@ -152,12 +152,42 @@ Mas posso ajudar com:
 }
 ```
 
+## 🏗️ Arquitetura
+
+Veja o [diagrama de arquitetura](architecture.md) completo com:
+- Fluxo de dados Mermaid
+- Componentes do sistema
+- Estrutura de classes
+
+## 🧪 Testes Automatizados
+
+### Executar Testes
+```bash
+# Testes via Node.js
+npm test
+
+# Testes no navegador
+open tests/test-runner.html
+```
+
+### Tipos de Teste
+- **Unidade**: Funções individuais
+- **Integração**: Fluxo completo
+- **E2E**: Simulação de usuário
+
+### Cobertura
+- ✅ Geração de respostas
+- ✅ Validação de input
+- ✅ Formatação de mensagens
+- ✅ Fluxo conversacional
+
 ## 📊 Métricas
 
-- **Tamanho**: ~15KB total
+- **Tamanho**: ~20KB total
 - **Carregamento**: <1s em conexões normais
 - **Compatibilidade**: Chrome 60+, Firefox 55+, Safari 12+
 - **Performance**: 90+ no Lighthouse
+- **Testes**: 6+ cenários automatizados
 
 ## 🤝 Contribuição
 
