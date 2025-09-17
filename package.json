@@ -5,9 +5,12 @@
   "main": "index.html",
   "scripts": {
     "test": "node tests/chatbot.test.js",
-    "test:browser": "open tests/test-runner.html",
+    "test:browser": "python3 -m http.server 8000 && echo 'Acesse: http://localhost:8000/tests/test-runner.html'",
     "serve": "python3 -m http.server 8000",
-    "start": "npm run serve"
+    "start": "npm run serve",
+    "chatbot": "python3 -m http.server 8000 && echo 'Chatbot: http://localhost:8000'",
+    "tests": "python3 -m http.server 8000 && echo 'Testes: http://localhost:8000/tests/test-runner.html'",
+    "demo": "python3 -m http.server 8000 && echo 'Chatbot: http://localhost:8000 | Testes: http://localhost:8000/tests/test-runner.html'"
   },
   "keywords": [
     "amazon-q",
