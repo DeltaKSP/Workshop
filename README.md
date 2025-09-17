@@ -53,10 +53,17 @@ start index.html
 
 ```
 Workshop/
-├── index.html          # Estrutura HTML principal
-├── style.css           # Estilos com tema Amazon
-├── script.js           # Lógica do chatbot
-└── README.md           # Documentação
+├── 📄 index.html          # Estrutura HTML
+├── 🎨 style.css           # Estilos Amazon
+├── ⚡ script.js           # Lógica do chatbot
+├── 🚀 deploy.sh           # Script de deploy
+├── 📊 architecture.md     # Arquitetura
+├── 📦 package.json        # Configuração
+├── 📖 README.md           # Documentação
+├── 🧪 tests/              # Testes automatizados
+├── 🔌 mcp-server/         # Servidor MCP
+├── 🏗️ infrastructure/      # Terraform IaC
+└── ⚙️ .amazonq/            # Config Amazon Q
 ```
 
 ## 🧠 Base de Conhecimento
@@ -181,13 +188,58 @@ open tests/test-runner.html
 - ✅ Formatação de mensagens
 - ✅ Fluxo conversacional
 
+## 🔌 Servidor MCP
+
+### Configuração
+```bash
+# Instalar dependências
+cd mcp-server
+pip install -r requirements.txt
+
+# Executar servidor
+python3 server.py
+```
+
+### Funcionalidades MCP
+- **get_aws_service**: Informações sobre serviços AWS
+- **Integração**: Amazon Q Developer
+- **Protocol**: Model Context Protocol
+
+## ⚙️ Amazon Q Developer
+
+### Configuração do Repositório
+- **Config**: `.amazonq/config.json`
+- **Regras**: `.amazonq/rules/aws-guidelines.md`
+- **MCP Server**: Integrado automaticamente
+- **Features**: Code generation, review, testing
+
+## 🏗️ Infrastructure as Code
+
+### Deploy na AWS
+```bash
+# Deploy completo
+./deploy.sh
+
+# Ou manual
+cd infrastructure
+terraform init
+terraform apply
+```
+
+### Recursos AWS
+- **S3**: Hospedagem estática
+- **CloudFront**: CDN global
+- **Lambda**: API backend (opcional)
+- **IAM**: Roles e políticas
+
 ## 📊 Métricas
 
-- **Tamanho**: ~20KB total
+- **Tamanho**: ~25KB total
 - **Carregamento**: <1s em conexões normais
 - **Compatibilidade**: Chrome 60+, Firefox 55+, Safari 12+
 - **Performance**: 90+ no Lighthouse
 - **Testes**: 6+ cenários automatizados
+- **Deploy**: Automatizado com Terraform
 
 ## 🤝 Contribuição
 

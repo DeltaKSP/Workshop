@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "project": {
+    "name": "amazon-q-chatbot-demo",
+    "description": "Amazon Q Developer Chatbot Demo for TDC 2025",
+    "tags": ["q-developer-quest-tdc-2025", "aws", "chatbot", "demo"]
+  },
+  "mcp": {
+    "servers": [
+      {
+        "name": "amazon-q-chatbot",
+        "command": "python3",
+        "args": ["mcp-server/server.py"],
+        "env": {}
+      }
+    ]
+  },
+  "features": {
+    "codeGeneration": true,
+    "codeReview": true,
+    "testing": true,
+    "documentation": true
+  },
+  "rules": [
+    {
+      "name": "aws-best-practices",
+      "description": "Follow AWS best practices for security and cost optimization"
+    },
+    {
+      "name": "serverless-first",
+      "description": "Prefer serverless solutions when possible"
+    }
+  ]
+}
