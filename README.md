@@ -1,5 +1,8 @@
 # 🤖 Amazon Q Developer - Chatbot Demo
 
+![TDC 2025](https://img.shields.io/badge/TDC-2025-orange?style=flat-square&logo=amazon-aws)
+![Q Developer Quest](https://img.shields.io/badge/Q--Developer--Quest-TDC--2025-blue?style=flat-square)
+
 Uma demonstração interativa do Amazon Q Developer com interface moderna e cores oficiais da Amazon.
 
 ## 📋 Sobre o Projeto
